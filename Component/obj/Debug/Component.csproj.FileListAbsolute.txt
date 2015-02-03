@@ -8,3 +8,8 @@ E:\Indigo\Samples\MySamples\Debugging\Monitoring\bin\Component.pdb
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\Component\obj\Debug\Component.dll
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\Component\obj\Debug\Component.pdb
+E:\Git\Source\Repos\WCFMonitor\bin\Component.dll
+E:\Git\Source\Repos\WCFMonitor\bin\Component.pdb
+E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.dll
+E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.pdb

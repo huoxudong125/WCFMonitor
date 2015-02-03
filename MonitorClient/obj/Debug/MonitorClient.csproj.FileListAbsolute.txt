@@ -4,3 +4,9 @@ E:\Indigo\Samples\MySamples\Debugging\Monitoring\bin\MonitorClient.exe
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\bin\MonitorClient.pdb
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\MonitorClient\obj\Debug\MonitorClient.exe
 E:\Indigo\Samples\MySamples\Debugging\Monitoring\MonitorClient\obj\Debug\MonitorClient.pdb
+E:\Git\Source\Repos\WCFMonitor\bin\MonitorClient.exe.config
+E:\Git\Source\Repos\WCFMonitor\bin\MonitorClient.exe
+E:\Git\Source\Repos\WCFMonitor\bin\MonitorClient.pdb
+E:\Git\Source\Repos\WCFMonitor\MonitorClient\obj\Debug\MonitorClient.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\WCFMonitor\MonitorClient\obj\Debug\MonitorClient.exe
+E:\Git\Source\Repos\WCFMonitor\MonitorClient\obj\Debug\MonitorClient.pdb

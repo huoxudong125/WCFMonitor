@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Logs/60abd805-c26f-4dec-8eff-2a53c1d08e53Client.svclog
+/Logs/Client.svclog
+/Logs/Server.svclog
+/Monitoring.v12.suo

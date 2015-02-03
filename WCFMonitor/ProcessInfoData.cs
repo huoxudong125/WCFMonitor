@@ -120,18 +120,26 @@ namespace WCFMonitor
                 lastError = "FATALERROR: Host cannot be null (ProcessInfo)";
                 return;
             }
-            serviceName = Host.Description.Name;
-            maxCalls = 0;
-            maxInstances = 0;
-            calls = 0;
-            sessions = 0;
+            try
+            {
+                serviceName = Host.Description.Name;
+                maxCalls = 0;
+                maxInstances = 0;
+                calls = 0;
+                sessions = 0;
 
-            maxCalls = Host.GetMaxCalls();
-            MaxSessions = Host.GetMaxSessions();
-            MaxInstances = Host.GetMaxInstances();
+                maxCalls = Host.GetMaxCalls();
+                MaxSessions = Host.GetMaxSessions();
+                MaxInstances = Host.GetMaxInstances();
 
-            sessions = Host.GetCurrentSessions();
-            calls = Host.GetCurrentCalls();
+                sessions = Host.GetCurrentSessions();
+                calls = Host.GetCurrentCalls();
+            }
+            catch (Exception ex)
+            {
+                lastError = ex.Message;
+            }
+
 
         }
 
