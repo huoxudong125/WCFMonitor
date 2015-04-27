@@ -8,6 +8,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Configuration;
+using System.Diagnostics;
 
 namespace WCFMonitor
 {
@@ -20,8 +21,29 @@ namespace WCFMonitor
 
         public void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
         {
+            Debug.WriteLine("ServiceType: " + serviceDescription.ServiceType.ToString());
+            serviceHostBase.AddServiceType(serviceDescription.ServiceType);
+            ServiceBehaviorAttribute sbAtt = serviceHostBase.Description.Behaviors.Find<ServiceBehaviorAttribute>();
+            if (sbAtt != null)
+            {
+                serviceHostBase.AddConcurrencyMode(sbAtt.ConcurrencyMode);
+                serviceHostBase.AddInstanceContextMode(sbAtt.InstanceContextMode);
+            }
+            //serviceHostBase.AddConcurrencyMode(serviceHostBase.Description.Behaviors.
+
+
             serviceHostBase.AddServiceHostForMonitoring();
+
+
             serviceHostBase.Closing += serviceHostBase_Closing;
+            serviceHostBase.Opened += serviceHostBase_Opened;
+        }
+
+        void serviceHostBase_Opened(object sender, EventArgs e)
+        {
+            ServiceHostBase host = sender as ServiceHostBase;
+            host.SetBehaviors();
+
         }
 
         void serviceHostBase_Closing(object sender, EventArgs e)

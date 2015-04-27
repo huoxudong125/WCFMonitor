@@ -23,6 +23,7 @@ namespace Host
             ServiceHost sh = CreateServiceHost(typeof(Component.Seahawks));
             ServiceHost shmonitor = CreateServiceHost(typeof(WCFMonitor.WCFMonitor));
 
+
             Console.ReadLine();
             sh.Close();
             Console.ReadLine();

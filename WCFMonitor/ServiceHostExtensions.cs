@@ -15,6 +15,7 @@ namespace WCFMonitor
     public static class ServiceHostExtensions
     {
         public static ConcurrentDictionary<string, ServiceHostBase> serviceHostBases = new ConcurrentDictionary<string, ServiceHostBase>();
+        public static ConcurrentDictionary<string, ServiceHostData> serviceHostDataDictionary = new ConcurrentDictionary<string, ServiceHostData>();
         private static FieldInfo serviceThrottleField;
         private static FieldInfo callsField;
         private static FieldInfo callsCountField;
@@ -50,6 +51,46 @@ namespace WCFMonitor
             }
         }
 
+        public static void SetBehaviors(this ServiceHostBase host)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                foreach(IServiceBehavior beh in host.Description.Behaviors)
+                {
+                    data.ServiceBehaviors.Add(beh.ToString());
+                }
+            }
+        }
+
+        public static void AddServiceType(this ServiceHostBase host, Type t)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                data.ServiceType = t;
+            }
+        }
+
+        public static void AddInstanceContextMode(this ServiceHostBase host, InstanceContextMode mode)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                data.ServiceInstanceContextMode = mode;
+            }
+        }
+
+        public static void AddConcurrencyMode(this ServiceHostBase host,ConcurrencyMode mode)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                data.ServiceConcurrencyMode = mode;
+            }
+        }
+
+
         public static void RemoveServiceHostFromMonitoring(this ServiceHostBase host)
         {
             Debug.WriteLine("Removing ServiceHost " + host.Description.Name + " from monitoring");
@@ -72,6 +113,19 @@ namespace WCFMonitor
                 return host;
             }
             return null;
+        }
+
+
+        public static ServiceHostData GetServiceHostData(this ServiceHostBase host)
+        {
+
+            ServiceHostData data = null;
+            if (!serviceHostDataDictionary.TryGetValue(host.Description.Name, out data))
+            {
+                data = new ServiceHostData();
+                serviceHostDataDictionary.TryAdd(host.Description.Name, data);
+            }
+            return data;
         }
 
         private static ServiceThrottlingBehavior GetThrottleBehavior(this ServiceHostBase host)

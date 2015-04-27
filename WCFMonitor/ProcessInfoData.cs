@@ -58,6 +58,7 @@ namespace WCFMonitor
             set { maxCalls = value; }
         }
 
+
         private int maxSessions;
 
         [DataMember]
@@ -103,6 +104,14 @@ namespace WCFMonitor
             set { userName = value; }
         }
 
+        private string servicehostType;
+        [DataMember]
+        public string ServiceHostType
+        {
+            get { return servicehostType; }
+            set { servicehostType = value; }
+        }
+
         private string authType;
 
         [DataMember]
@@ -110,6 +119,31 @@ namespace WCFMonitor
         {
             get { return authType; }
             set { authType = value; }
+        }
+
+        private ConcurrencyMode serviceConcurrencyMode;
+
+        [DataMember]
+        public ConcurrencyMode ServiceConcurrencyMode
+        {
+            get { return serviceConcurrencyMode; }
+            set { serviceConcurrencyMode = value; }
+        }
+
+        private InstanceContextMode instanceContextMode;
+        [DataMember]
+        public InstanceContextMode ServiceInstanceContextMode
+        {
+            get { return instanceContextMode; }
+            set { instanceContextMode = value; }
+        }
+
+        private IEnumerable<string> serviceBehaviors;
+        [DataMember]
+        public IEnumerable<string> ServiceBehaviors
+        {
+            get { return serviceBehaviors; }
+            set { serviceBehaviors = value; }
         }
 
         internal ProcessInfoData(ServiceHostBase Host)
@@ -127,13 +161,20 @@ namespace WCFMonitor
                 maxInstances = 0;
                 calls = 0;
                 sessions = 0;
-
+                
                 maxCalls = Host.GetMaxCalls();
                 MaxSessions = Host.GetMaxSessions();
                 MaxInstances = Host.GetMaxInstances();
 
                 sessions = Host.GetCurrentSessions();
                 calls = Host.GetCurrentCalls();
+                ServiceHostData data = Host.GetServiceHostData();
+                servicehostType = data.ServiceType.ToString();
+                serviceConcurrencyMode = data.ServiceConcurrencyMode;
+                instanceContextMode = data.ServiceInstanceContextMode;
+                serviceBehaviors = data.ServiceBehaviors;
+
+
             }
             catch (Exception ex)
             {

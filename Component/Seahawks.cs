@@ -26,7 +26,7 @@ namespace Component
         public string WinSuperbowl()
         {
             Debug.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + "\t" + "WinSuperbowl");
-            Thread.Sleep(40000);
+            Thread.Sleep(5000);
             return "Legion of Boom!";
         }
     }
@@ -49,7 +49,7 @@ namespace Component
         public string WinSuperbowl()
         {
             Debug.WriteLine("Thread: " + Thread.CurrentThread.ManagedThreadId.ToString() + "\t" + "WinSuperbowl");
-            Thread.Sleep(40000);
+            Thread.Sleep(5000);
             return "Legion of Boom!";
         }
     }

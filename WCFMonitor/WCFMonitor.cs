@@ -15,18 +15,30 @@ namespace WCFMonitor
             if (host == null)
                 return string.Empty;
             ProcessInfoData pi = new ProcessInfoData(host);
-            string retval = string.Format("Process Name: {0}{10} ServiceName: {1}{10} GCMode: {2}{10} Bitness: {3}{10} MaxCalls: {4}{10} CurrentCalls: {5}{10} MaxSessions: {6}{10} CurrentSessions: {7}{10} MaxInstances: {8}{10} LastError: {9}{10}",
-                pi.ProcessName,
-                pi.ServiceName,
-                pi.GCMode,
-                pi.Bitness,
-                pi.MaxCalls,
-                pi.Calls,
-                pi.MaxSessions,
-                pi.Sessions,
-                pi.MaxInstances,
-                pi.LastError,
-                Environment.NewLine);
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Process Name: {0}{1}", pi.ProcessName, Environment.NewLine);
+            sb.AppendFormat("ServiceName Name: {0}{1}", pi.ServiceName, Environment.NewLine);
+            sb.AppendFormat("ServiceHostType: {0}{1}", pi.ServiceHostType, Environment.NewLine);
+            sb.AppendFormat("ConcurrencyMode: {0}{1}", pi.ServiceConcurrencyMode.ToString(), Environment.NewLine);
+            sb.AppendFormat("InstanceContextMode: {0}{1}", pi.ServiceInstanceContextMode.ToString(), Environment.NewLine);
+            sb.AppendFormat("GCMode: {0}{1}", pi.GCMode, Environment.NewLine);
+            sb.AppendFormat("Bitness: {0}{1}", pi.Bitness, Environment.NewLine);
+            sb.AppendFormat("MaxCalls: {0}{1}", pi.MaxCalls, Environment.NewLine);
+            sb.AppendFormat("Calls: {0}{1}", pi.Calls, Environment.NewLine);
+            sb.AppendFormat("MaxSessions: {0}{1}", pi.MaxSessions, Environment.NewLine);
+            sb.AppendFormat("Sessions: {0}{1}", pi.Sessions, Environment.NewLine);
+            sb.AppendFormat("MaxInstances: {0}{1}", pi.MaxInstances, Environment.NewLine);
+            sb.AppendFormat("Behaviors: {0}", Environment.NewLine);
+            int i = 0;
+            foreach(string beh in pi.ServiceBehaviors)
+            {
+                sb.AppendFormat("\t{0,3}: {1}{2}",i.ToString(), beh, Environment.NewLine);
+                i++;
+            }
+            sb.AppendFormat("LastError: {0}{1}", pi.LastError, Environment.NewLine);
+
+            string retval = sb.ToString();
+
             return retval;
         }
 

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MonitorBehavior.cs" />
+    <Compile Include="ServiceHostData.cs" />
     <Compile Include="ServiceHostExtensions.cs" />
     <Compile Include="IWCFMonitor.cs" />
     <Compile Include="ProcessInfoData.cs" />
