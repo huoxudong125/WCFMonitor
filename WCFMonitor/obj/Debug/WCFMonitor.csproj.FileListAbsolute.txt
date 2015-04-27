@@ -10,3 +10,8 @@ E:\Git\Source\Repos\WCFMonitor\bin\WCFMonitor.pdb
 E:\Git\Source\Repos\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.csprojResolveAssemblyReference.cache
 E:\Git\Source\Repos\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.dll
 E:\Git\Source\Repos\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\WCFMonitor.dll
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.dll
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\WCFMonitor\obj\Debug\WCFMonitor.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\WCFMonitor.pdb

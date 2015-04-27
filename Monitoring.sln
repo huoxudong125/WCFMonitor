@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorClient", "MonitorClient\MonitorClient.csproj", "{E6B7E857-6276-460A-9C45-8DD3157FE15A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stress", "..\..\WCFMonitor\StressClient\Stress.csproj", "{27B7B7E3-394B-4ECF-9B72-83A7C35960C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{E6B7E857-6276-460A-9C45-8DD3157FE15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6B7E857-6276-460A-9C45-8DD3157FE15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6B7E857-6276-460A-9C45-8DD3157FE15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B7B7E3-394B-4ECF-9B72-83A7C35960C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B7B7E3-394B-4ECF-9B72-83A7C35960C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B7B7E3-394B-4ECF-9B72-83A7C35960C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B7B7E3-394B-4ECF-9B72-83A7C35960C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

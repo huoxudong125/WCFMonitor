@@ -22,3 +22,9 @@ E:\Git\Source\Repos\WCFMonitor\bin\Host.pdb
 E:\Git\Source\Repos\WCFMonitor\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
 E:\Git\Source\Repos\WCFMonitor\Host\obj\Debug\Host.exe
 E:\Git\Source\Repos\WCFMonitor\Host\obj\Debug\Host.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Host.exe.config
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Host.exe
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Host\obj\Debug\Host.exe
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Host\obj\Debug\Host.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Host.pdb

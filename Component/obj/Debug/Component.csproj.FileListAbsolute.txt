@@ -13,3 +13,8 @@ E:\Git\Source\Repos\WCFMonitor\bin\Component.pdb
 E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache
 E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.dll
 E:\Git\Source\Repos\WCFMonitor\Component\obj\Debug\Component.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Component.dll
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Component\obj\Debug\Component.dll
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Component\obj\Debug\Component.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Component.pdb

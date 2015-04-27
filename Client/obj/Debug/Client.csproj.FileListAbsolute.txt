@@ -16,3 +16,9 @@ E:\Git\Source\Repos\WCFMonitor\bin\Client.pdb
 E:\Git\Source\Repos\WCFMonitor\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 E:\Git\Source\Repos\WCFMonitor\Client\obj\Debug\Client.exe
 E:\Git\Source\Repos\WCFMonitor\Client\obj\Debug\Client.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Client.exe.config
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Client.exe
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\bin\Client.pdb
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Client\obj\Debug\Client.exe
+E:\Git\Source\Repos\RESTContractChange\WCFMonitor\Client\obj\Debug\Client.pdb
