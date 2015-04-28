@@ -21,7 +21,6 @@ namespace WCFMonitor
 
         public void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
         {
-            Debug.WriteLine("ServiceType: " + serviceDescription.ServiceType.ToString());
             serviceHostBase.AddServiceType(serviceDescription.ServiceType);
             ServiceBehaviorAttribute sbAtt = serviceHostBase.Description.Behaviors.Find<ServiceBehaviorAttribute>();
             if (sbAtt != null)
@@ -29,12 +28,7 @@ namespace WCFMonitor
                 serviceHostBase.AddConcurrencyMode(sbAtt.ConcurrencyMode);
                 serviceHostBase.AddInstanceContextMode(sbAtt.InstanceContextMode);
             }
-            //serviceHostBase.AddConcurrencyMode(serviceHostBase.Description.Behaviors.
-
-
             serviceHostBase.AddServiceHostForMonitoring();
-
-
             serviceHostBase.Closing += serviceHostBase_Closing;
             serviceHostBase.Opened += serviceHostBase_Opened;
         }

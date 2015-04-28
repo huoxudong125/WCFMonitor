@@ -115,6 +115,63 @@ namespace WCFMonitor
             return null;
         }
 
+        public static InstanceContextMode GetInstanceContextMode(this ServiceHostBase host)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                return data.ServiceInstanceContextMode;
+            }
+            else
+            {
+                Debug.WriteLine("Error, no data for this service");
+            }
+            return InstanceContextMode.PerSession;
+        }
+
+        public static IEnumerable<string> GetServiceBehaviors(this ServiceHostBase host)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                return data.ServiceBehaviors;
+            }
+            else
+            {
+                Debug.WriteLine("Error, no data for this service");
+            }
+            return null;
+        }
+
+        public static Type GetServiceType(this ServiceHostBase host)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                return data.ServiceType;
+            }
+            else
+            {
+                Debug.WriteLine("Error, no data for this service");
+            }
+            return null;
+        }
+
+        public static ConcurrencyMode GetConcurrencyMode(this ServiceHostBase host)
+        {
+            ServiceHostData data = GetServiceHostData(host);
+            if (data != null)
+            {
+                return data.ServiceConcurrencyMode;
+            }
+            else
+            {
+                Debug.WriteLine("Error, no data for this service");
+            }
+            return ConcurrencyMode.Single;
+            
+        }
+
 
         public static ServiceHostData GetServiceHostData(this ServiceHostBase host)
         {

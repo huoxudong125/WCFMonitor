@@ -168,11 +168,10 @@ namespace WCFMonitor
 
                 sessions = Host.GetCurrentSessions();
                 calls = Host.GetCurrentCalls();
-                ServiceHostData data = Host.GetServiceHostData();
-                servicehostType = data.ServiceType.ToString();
-                serviceConcurrencyMode = data.ServiceConcurrencyMode;
-                instanceContextMode = data.ServiceInstanceContextMode;
-                serviceBehaviors = data.ServiceBehaviors;
+                servicehostType = Host.GetServiceType().ToString();
+                serviceConcurrencyMode = Host.GetConcurrencyMode();
+                instanceContextMode = Host.GetInstanceContextMode();
+                serviceBehaviors = Host.GetServiceBehaviors();
 
 
             }
