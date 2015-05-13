@@ -50,5 +50,12 @@ namespace WCFMonitor
             ProcessInfoData pi = new ProcessInfoData(host);
             return pi;
         }
+
+
+        public List<string> GetServices()
+        {
+            List<string> services = ServiceHostExtensions.GetListOfServices();
+            return services;
+        }
     }
 }

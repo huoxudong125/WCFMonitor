@@ -15,5 +15,8 @@ namespace WCFMonitor
 
         [OperationContract]
         ProcessInfoData GetProcessObjInfo(string ServiceName);
+
+        [OperationContract]
+        List<string> GetServices();
     }
 }

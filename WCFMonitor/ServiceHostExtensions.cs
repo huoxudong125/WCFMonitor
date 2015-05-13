@@ -115,6 +115,12 @@ namespace WCFMonitor
             return null;
         }
 
+        public static List<string> GetListOfServices()
+        {
+            List<string> services = ServiceHostExtensions.serviceHostBases.Keys.ToList<string>();
+            return services;
+        }
+
         public static InstanceContextMode GetInstanceContextMode(this ServiceHostBase host)
         {
             ServiceHostData data = GetServiceHostData(host);

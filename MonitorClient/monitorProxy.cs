@@ -41,6 +41,14 @@ namespace WCFMonitor
         
         private string ProcessNameField;
         
+        private string[] ServiceBehaviorsField;
+        
+        private System.ServiceModel.ConcurrencyMode ServiceConcurrencyModeField;
+        
+        private string ServiceHostTypeField;
+        
+        private System.ServiceModel.InstanceContextMode ServiceInstanceContextModeField;
+        
         private int SessionsField;
         
         private string UserNameField;
@@ -188,6 +196,58 @@ namespace WCFMonitor
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] ServiceBehaviors
+        {
+            get
+            {
+                return this.ServiceBehaviorsField;
+            }
+            set
+            {
+                this.ServiceBehaviorsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.ServiceModel.ConcurrencyMode ServiceConcurrencyMode
+        {
+            get
+            {
+                return this.ServiceConcurrencyModeField;
+            }
+            set
+            {
+                this.ServiceConcurrencyModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ServiceHostType
+        {
+            get
+            {
+                return this.ServiceHostTypeField;
+            }
+            set
+            {
+                this.ServiceHostTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.ServiceModel.InstanceContextMode ServiceInstanceContextMode
+        {
+            get
+            {
+                return this.ServiceInstanceContextModeField;
+            }
+            set
+            {
+                this.ServiceInstanceContextModeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Sessions
         {
             get
@@ -225,7 +285,10 @@ public interface IWCFMonitor
     string GetProcessInfo(string ServiceName);
     
     [System.ServiceModel.OperationContractAttribute(Action="urn:WCFMonitor/IWCFMonitor/GetProcessObjInfo", ReplyAction="urn:WCFMonitor/IWCFMonitor/GetProcessObjInfoResponse")]
-    WCFMonitor.ProcessInfoData GetProcessObjInfo();
+    WCFMonitor.ProcessInfoData GetProcessObjInfo(string ServiceName);
+    
+    [System.ServiceModel.OperationContractAttribute(Action="urn:WCFMonitor/IWCFMonitor/GetServices", ReplyAction="urn:WCFMonitor/IWCFMonitor/GetServicesResponse")]
+    string[] GetServices();
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -267,8 +330,13 @@ public partial class WCFMonitorClient : System.ServiceModel.ClientBase<IWCFMonit
         return base.Channel.GetProcessInfo(ServiceName);
     }
     
-    public WCFMonitor.ProcessInfoData GetProcessObjInfo()
+    public WCFMonitor.ProcessInfoData GetProcessObjInfo(string ServiceName)
     {
-        return base.Channel.GetProcessObjInfo();
+        return base.Channel.GetProcessObjInfo(ServiceName);
+    }
+    
+    public string[] GetServices()
+    {
+        return base.Channel.GetServices();
     }
 }

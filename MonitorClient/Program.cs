@@ -15,6 +15,13 @@ namespace MonitorClient
 
             try
             {
+                string[] services = proxy.GetServices();
+                Console.WriteLine("Serivces" + Environment.NewLine + "-----------------");
+                foreach(string service in services)
+                {
+                    Console.WriteLine(service);
+                }
+                Console.WriteLine("-----------------" + Environment.NewLine);
                 string retval = proxy.GetProcessInfo("Seahawks");
                 Console.WriteLine(retval);
 
