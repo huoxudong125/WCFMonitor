@@ -17,6 +17,7 @@ namespace Client
             {
                 string retval = proxy.BeatTheBroncos(35);
                 Console.WriteLine(retval);
+                Console.Read();
 
             }
             catch (Exception ex)

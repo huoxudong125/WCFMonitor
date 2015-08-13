@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Collections.Generic;
 namespace WCFMonitor
 {
     using System.Runtime.Serialization;
@@ -288,7 +289,7 @@ public interface IWCFMonitor
     WCFMonitor.ProcessInfoData GetProcessObjInfo(string ServiceName);
     
     [System.ServiceModel.OperationContractAttribute(Action="urn:WCFMonitor/IWCFMonitor/GetServices", ReplyAction="urn:WCFMonitor/IWCFMonitor/GetServicesResponse")]
-    string[] GetServices();
+    List<string> GetServices();
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -335,7 +336,7 @@ public partial class WCFMonitorClient : System.ServiceModel.ClientBase<IWCFMonit
         return base.Channel.GetProcessObjInfo(ServiceName);
     }
     
-    public string[] GetServices()
+    public List<string> GetServices()
     {
         return base.Channel.GetServices();
     }
